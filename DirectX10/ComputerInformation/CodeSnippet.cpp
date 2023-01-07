@@ -1,3 +1,5 @@
+/* How to retrieve computer's information - Code Snippet */
+
 #include <direct.h>
 #include "ComputerInfo.h"
  
