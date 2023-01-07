@@ -3,5 +3,6 @@
 
 ### Its name is conceived as "Gem".
 
+#### It is still in working progress though.
 
 :smile:	
