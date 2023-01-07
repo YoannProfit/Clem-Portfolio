@@ -1,27 +1,30 @@
 //----------------------------------------------------
-// Auteur : Clément Profit
+// Auteur : ClÃ©ment Profit
 // Nom du fichier : Page.h
-// Date de création : Octobre 2015
-// Description : Classe qui représente un utilisateur
-// du système
+// Date de crÃ©ation : Octobre 2015
+// Description : Classe qui reprÃ©sente la gestion d'un 
+// utilisateur du systÃ¨me
 //----------------------------------------------------
 
 #ifndef USER_H
 #define USER_H
 
 #include "Types.h"
+
 namespace Core
 {
 	class User
 	{
-		void	setPassword(char *n);
-		char*	getPassword();
+		public:
 
-				
+			void SetPassword(char* sName);
+			char* GetPassword();
+		
 		protected:
-		u32		utype;
+			u32 utype;
 
-		char	password[512];
-	}
+			char password[512];
+	};
 };
+
 #endif
