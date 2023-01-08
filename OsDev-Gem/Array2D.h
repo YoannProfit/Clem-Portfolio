@@ -1,9 +1,9 @@
 //----------------------------------------------------
-// Auteur : Clément Profit
+// Auteur : ClÃ©ment Profit
 // Nom du fichier : Array2D.h
-// Date de création : Octobre 2015
-// Description : Cette classe permet de gérer
-// un tableau à deux dimensions (utilisé pour la matrice
+// Date de crÃ©ation : Octobre 2015
+// Description : Cette classe permet de gÃ©rer
+// un tableau Ã  deux dimensions (utilisÃ© pour la matrice
 // de texte VideoMemory)
 //----------------------------------------------------
 
@@ -31,7 +31,7 @@ public:
 
     inline T& operator[] (uint32 x, uint32 y)
     {
-		AssertMsg(((y * m_iWidth) + x) < Size(), "Accès indice de tableau or marge !");
+		AssertMsg(((y * m_iWidth) + x) < Size(), "AccÃ¨s indice de tableau or marge !");
 		
         return m_array[ (y * m_iWidth) + x ];
     }
@@ -43,7 +43,7 @@ public:
  
     inline const T& operator[] (uint32 x, uint32 y) const
     {
-		AssertMsg(((y * m_iWidth) + x) < Size(), "Accès indice de tableau or marge !");
+		AssertMsg(((y * m_iWidth) + x) < Size(), "AccÃ¨s indice de tableau or marge !");
 		
         return m_array[ (y * m_iWidth) + x ];
     }
@@ -59,7 +59,7 @@ public:
 
 	void RemoveByIndices(uint32 iPosX, uint32 iPosY)
 	{
-		AssertMsg(((iPosY * m_iWidth) + iPosX) < Size(), "Accès indice de tableau hors marge !");
+		AssertMsg(((iPosY * m_iWidth) + iPosX) < Size(), "AccÃ¨s indice de tableau hors marge !");
 		
 		T elem = m_array[ (iPosY * m_iWidth) + iPosX ];
 

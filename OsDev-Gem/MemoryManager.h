@@ -1,9 +1,9 @@
 //----------------------------------------------------
-// Auteur : Clément Profit
+// Auteur : ClÃ©ment Profit
 // Nom du fichier : MemoryManager.h
-// Date de création : Octobre 2015
-// Description : Une classe pour gérer les allocations
-// de mémoire de l'OS.
+// Date de crÃ©ation : Octobre 2015
+// Description : Une classe pour gÃ©rer les allocations
+// de mÃ©moire de l'OS.
 //----------------------------------------------------
 
 #ifndef MEMORY_MANAGER_H
@@ -19,8 +19,8 @@ public:
 	MemoryManager();
 	virtual ~MemoryManager();
 	
-	void KernelAlloc(size_t iAllocatedSize);
-	void KernelCAlloc(size_t iAllocatedSize);
+	void* KernelAlloc(size_t iAllocatedSize);
+	void* KernelCAlloc(size_t iAllocatedSize);
 	
 	void KernelFree(void* pAdress);
 

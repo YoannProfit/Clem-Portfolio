@@ -1,8 +1,8 @@
 //----------------------------------------------------
-// Auteur : Clément Profit
+// Auteur : ClÃ©ment Profit
 // Nom du fichier : PCI.h
-// Date de création : Octobre 2015
-// Description : Une classe pour gérer les cartes PCI
+// Date de crÃ©ation : Octobre 2015
+// Description : Une classe pour gÃ©rer les cartes PCI
 // de la machine
 //----------------------------------------------------
 

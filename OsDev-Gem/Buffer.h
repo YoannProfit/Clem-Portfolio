@@ -15,10 +15,10 @@ public:
 	Buffer(char* n,size_t iSize);
 	virtual ~Buffer(); 
 		
-	void	add(u8* c,u32 s);
-	u32	get(u8* c,u32 s);
-	void	clear();
-	u32		isEmpty();
+	void	Add(u8* c,u32 s);
+	u32		Get(u8* c,u32 s);
+	void	Clear();
+	u32		IsEmpty();
 		
 	Buffer &operator>>(char *c);
 

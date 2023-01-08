@@ -1,9 +1,9 @@
 //----------------------------------------------------
-// Auteur : Clément Profit
+// Auteur : ClÃ©ment Profit
 // Nom du fichier : Keyboard.h
-// Date de création : Octobre 2015
+// Date de crÃ©ation : Octobre 2015
 // Description : Cette classe clavier permet 
-// d'écouter les entrées des touches tappées par 
+// d'Ã©couter les entrÃ©es des touches tappÃ©es par 
 // l'utilisateur
 //----------------------------------------------------
 
@@ -26,9 +26,9 @@ class Keyboard //: public Device
 public:
 	enum KeyLight
 	{
-		ScrollLock = BIT(0);
-		NumLock = BIT(1);
-		CapsLock = BIT(2);
+		ScrollLock 			= BIT(0);
+		NumLock 			= BIT(1);
+		CapsLock 			= BIT(2);
 	};
 
 	Keyboard();

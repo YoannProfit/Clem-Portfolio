@@ -1,9 +1,9 @@
 //----------------------------------------------------
-// Auteur : Clément Profit
+// Auteur : ClÃ©ment Profit
 // Nom du fichier : TaskStateSegment.h
-// Date de création : Octobre 2015
-// Description : Cette structure représente la TSS 
-// représentant le contexte de chaque processus
+// Date de crÃ©ation : Octobre 2015
+// Description : Cette structure reprÃ©sente la TSS 
+// reprÃ©sentant le contexte de chaque processus
 //----------------------------------------------------
 
 #ifndef TASK_STATE_SEGMENT_H

@@ -1,8 +1,8 @@
 //----------------------------------------------------
-// Auteur : Clément Profit
+// Auteur : ClÃ©ment Profit
 // Nom du fichier : Singleton.h
-// Date de création : Octobre 2015
-// Description : Singleton design pattern pour gérer
+// Date de crÃ©ation : Octobre 2015
+// Description : Singleton design pattern pour gÃ©rer
 // une instance unique d'un objet
 //----------------------------------------------------
 
@@ -42,7 +42,7 @@ public:
         return ms_instance != nullptr;
     }
  
-private: // Opération interdite
+private: // OpÃ©ration interdite
     Singleton(const Singleton<T> &);
     Singleton& operator=(const Singleton<T> &);
  

@@ -1,9 +1,9 @@
 //----------------------------------------------------
-// Auteur : Clément Profit
+// Auteur : ClÃ©ment Profit
 // Nom du fichier : String.h
-// Date de création : Octobre 2015
-// Description : Classe générique pour gérer les
-// différents types de chaînes de caractères
+// Date de crÃ©ation : Octobre 2015
+// Description : Classe gÃ©nÃ©rique pour gÃ©rer les
+// diffÃ©rents types de chaÃ®nes de caractÃ¨res
 // 
 // Supporte les type char et wchar_t
 //----------------------------------------------------
@@ -97,7 +97,7 @@ namespace Core
 
 		String<T> SubString(uint32 iBegin, int32 iLength) const
 		{
-			// Paramètres incorrects
+			// ParamÃ¨tres incorrects
 			if (iLength <= 0) || iBegin >= Size())
 			{
 				return String<T>("");

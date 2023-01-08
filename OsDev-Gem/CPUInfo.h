@@ -1,7 +1,7 @@
 //----------------------------------------------------
-// Auteur : Clément Profit
+// Auteur : ClÃ©ment Profit
 // Nom du fichier : CPUInfo.h
-// Date de création : Octobre 2015
+// Date de crÃ©ation : Octobre 2015
 // Description : Une classe pour obtenir des informations
 // sur l'architecture du processeur machine
 //----------------------------------------------------
@@ -17,10 +17,10 @@ class CPUInfo : public Singleton<CPUInfo>
 public:
 	enum class Vendor : uint8
 	{
-		Intel = 0,
-		AMD = 1,
-		Unknown = 2,
-		NotSet = 3,
+		Intel 			= 0,
+		AMD 			= 1,
+		Unknown 		= 2,
+		NotSet 			= 3,
 	};
 	
 	CPUInfo();

@@ -24,16 +24,20 @@ namespace Core
 		typedef T* Iterator;
 
 		Array() : 
-		m_aData(nullptr), 
-		m_iAllocated(0), 
-		m_iUsed(0)
+		
+			m_aData(nullptr), 
+			m_iAllocated(0), 
+			m_iUsed(0)
+			
 		{
 		}
 
 		Array(size_t iSize) : 
-		m_aData(nullptr), 
-		m_iAllocated(iSize), 
-		m_iUsed(0)
+		
+			m_aData(nullptr), 
+			m_iAllocated(iSize), 
+			m_iUsed(0)
+			
 		{
 			Reallocate(iSize);
 		}	

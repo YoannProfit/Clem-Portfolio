@@ -15,7 +15,7 @@ public:
 	PIT();
 	virtual ~PIT();
 
-	void RemapIRQs();
+	void Remap_IRQs();
 
 private:
 };

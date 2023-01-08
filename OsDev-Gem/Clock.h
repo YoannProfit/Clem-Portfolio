@@ -1,10 +1,10 @@
 //----------------------------------------------------
-// Auteur : Clément Profit
+// Auteur : ClÃ©ment Profit
 // Nom du fichier : Clock.h
-// Date de création : Octobre 2015
-// Description : Une classe afin d'avoir l'accès à 
-// l'horloge de la machine afin de récupérer la date 
-// du système
+// Date de crÃ©ation : Octobre 2015
+// Description : Une classe afin d'avoir l'accÃ¨s Ã  
+// l'horloge de la machine afin de rÃ©cupÃ©rer la date 
+// du systÃ¨me
 //----------------------------------------------------
 
 #ifndef CLOCK_H

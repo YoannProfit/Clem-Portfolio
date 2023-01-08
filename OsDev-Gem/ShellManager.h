@@ -1,8 +1,8 @@
 //----------------------------------------------------
-// Auteur : Clément Profit
+// Auteur : ClÃ©ment Profit
 // Nom du fichier : ShellManager.h
-// Date de création : Octobre 2015
-// Description : Gestionnaire des différents shells
+// Date de crÃ©ation : Octobre 2015
+// Description : Gestionnaire des diffÃ©rents shells
 // (TTY, GraphicTerminal, Shell, etc...)
 //----------------------------------------------------
 
