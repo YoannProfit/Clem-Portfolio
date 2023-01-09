@@ -62,7 +62,7 @@ public:
  
     void GetTextElements(std::vector<TextElement*>& elems);
  
-    unsigned int GetTextElementsCount();
+    uint32 GetTextElementsCount();
  
     MessageType::Type GetType();
  
@@ -74,7 +74,7 @@ private:
  
     MessageType::Type m_type;
  
-    unsigned int m_iLastElementLength;
+    uint32 m_iLastElementLength;
 };
  
 /* Le petit texte de saisie en bas à gauche de la console */
@@ -101,12 +101,12 @@ public:
  
     void SetArrowTransparency(float fValue);
     void SetArrowPosition(float x, float y);
-    void SetArrowSize(unsigned int iArrowWidth, unsigned int iArrowHeight);
+    void SetArrowSize(uint32 iArrowWidth, uint32 iArrowHeight);
  
     void MoveCursorToLeft();
     void MoveCursorToRight();
  
-    unsigned int GetCursorPos();
+    uint32 GetCursorPos();
  
     void Update(float fYPosition);
  
@@ -205,12 +205,12 @@ public:
     virtual void RepetitiveKeyPressed(const KeyEvent &arg);
     virtual void RepetitiveKeyReleased(const KeyEvent &arg);
  
-    unsigned int GetCharactWidth();
+    size_t GetCharactWidth();
  
     bool ChangeBackgroundImage(const std::wstring& sBgFile);
  
 private:
-    unsigned int GetWidth();
+    size_t GetWidth();
     float GetStringLength(std::wstring sText);
     void UpdateSprites(float fTimeElapsedSinceLastFrame);
     void CreateTextFont();
@@ -233,7 +233,7 @@ private:
     float m_fConsoleWidth;
      
     // Hauteur totale de la console en prenant en compte le prompt
-    unsigned int m_iTotalConsoleHeight;
+    uint32 m_iTotalConsoleHeight;
  
     // Largeur d'un caractère
     float m_fCharWidth;
@@ -241,9 +241,9 @@ private:
     float m_fCharHeight;
  
     // Le nombre maximum de lignes affichées à la fois
-    unsigned int m_iMaxLinesDisplayed;
+    uint32 m_iMaxLinesDisplayed;
     // Le nombre maximul de caractères présent sur une ligne
-    unsigned int m_iMaxCharOnLine;
+    uint32 m_iMaxCharOnLine;
  
     std::vector<TextElement*> m_blinkingTextElements;
  

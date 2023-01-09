@@ -1,117 +1,193 @@
-/* How to retrieve computer's information - Code Snippet */
+/* How to retrieve computer's information - C++ Code Snippet */
 
-#include <direct.h>
-#include "ComputerInfo.h"
- 
+#include "Framework.h"
+
+using namespace fw;
+
+template<> ComputerInfo* Singleton<ComputerInfo>::ms_instance = nullptr;
+
 ComputerInfo::ComputerInfo()
 {
-    parseOSName();
-    parseCPU();
-    parseMemory();
+    ParseOSName();
+    ParseCPU();
+    ParseMemory();
+	ParseHDSpace();
 }
- 
+
 ComputerInfo::~ComputerInfo()
 {
 }
- 
-std::string ComputerInfo::getOsName()
+
+const std::string& ComputerInfo::GetOsName()
 {
-    return m_sOsName;
+	return m_sOsName;
 }
- 
-std::string ComputerInfo::getCpuName()
+
+const std::string& ComputerInfo::GetCpuName()
 {
-    return m_sCpuName;
+	return m_sCpuName;
 }
- 
-std::string ComputerInfo::getCpuSpeed()
+
+const std::string& ComputerInfo::GetCpuSpeed()
 {
-    return m_sCpuSpeed;
+	return m_sCpuSpeed;
 }
- 
-std::string ComputerInfo::getTotalMemory()
+
+const std::string& ComputerInfo::GetTotalMemory()
 {
-    return m_sTotalMemory;
+	return m_sTotalMemory;
 }
- 
-std::string ComputerInfo::getAvailableMemory()
+
+const std::string& ComputerInfo::GetAvailableMemory()
 {
-    return m_sAvailableMemory;
+	return m_sAvailableMemory;
 }
- 
-void ComputerInfo::parseOSName()
+
+const std::string& ComputerInfo::GetHDSpace()
 {
-    OSVERSIONINFO osvi;
-    ZeroMemory(&osvi, sizeof(OSVERSIONINFO));
-    osvi.dwOSVersionInfoSize = sizeof(OSVERSIONINFO);
-    GetVersionEx(&osvi);
- 
-    std::string sOSName;
- 
-    switch(osvi.dwMajorVersion)
-    {
-        case 6:
-            {
-                if (osvi.dwMinorVersion == 3)
-                    sOSName = "Windows 8.1";
-                else if (osvi.dwMinorVersion == 2)
-                    sOSName = "Windows 8";
-                else if (osvi.dwMinorVersion == 1)
-                    sOSName = "Windows 7";
-                else if (osvi.dwMinorVersion == 0)
-                    sOSName = "Windows Vista";
-            }
-            break;
-        case 5:
-            {
-                if (osvi.dwMinorVersion == 1)
-                    sOSName = "Windows XP";
-            }
-            break;
- 
-        default: sOSName = "OS Inconnu";
-    }
- 
-    m_sOsName = sOSName;
+	return m_sHDDAvailableMemory;
 }
- 
-void ComputerInfo::parseCPU()
+
+bool ComputerInfo::IsWindows10()
+{
+	HKEY hKey;
+
+	long lError = RegOpenKeyExA(HKEY_LOCAL_MACHINE,
+		"SOFTWARE\\Microsoft\\Windows NT\\CurrentVersion",
+		0,
+		KEY_READ,
+		&hKey);
+
+	DWORD BufSize = _MAX_PATH;
+	std::string sProductName;
+	sProductName.resize(256);
+
+	RegQueryValueExA(hKey, "ProductName", NULL, NULL, (LPBYTE)&sProductName[0], &BufSize);
+
+	if (STRING_BUILDER->StartWith(sProductName, "Windows 10"))
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
+bool ComputerInfo::CompareWindowsVersionMinor(const DWORD dwMinorVersion)
+{
+	OSVERSIONINFOEX ver;
+	DWORDLONG dwlConditionMask = 0;
+
+	ZeroMemory(&ver, sizeof(OSVERSIONINFOEX));
+	ver.dwOSVersionInfoSize = sizeof(OSVERSIONINFOEX);
+	ver.dwMinorVersion = dwMinorVersion;
+
+	VER_SET_CONDITION(dwlConditionMask, VER_MINORVERSION, VER_EQUAL);
+
+	return VerifyVersionInfo(&ver, VER_MINORVERSION, dwlConditionMask);
+}
+
+bool ComputerInfo::CompareWindowsVersionMajor(const DWORD dwMajorVersion)
+{
+	OSVERSIONINFOEX ver;
+	DWORDLONG dwlConditionMask = 0;
+
+	ZeroMemory(&ver, sizeof(OSVERSIONINFOEX));
+	ver.dwOSVersionInfoSize = sizeof(OSVERSIONINFOEX);
+	ver.dwMajorVersion = dwMajorVersion;
+
+	VER_SET_CONDITION(dwlConditionMask, VER_MAJORVERSION, VER_EQUAL);
+
+	return VerifyVersionInfo(&ver, VER_MAJORVERSION, dwlConditionMask);
+}
+
+void ComputerInfo::ParseOSName()
+{
+	std::string sOSName = "OS Inconnu";
+	
+	if (CompareWindowsVersionMajor(10))
+	{
+		if ((CompareWindowsVersionMinor(0)))
+		{
+			sOSName = "Windows 10.0";
+		}
+	}
+	else if (CompareWindowsVersionMajor(6))
+	{
+		if ((CompareWindowsVersionMinor(3)))
+		{
+			sOSName = "Windows 8.1";
+		}
+		else if ((CompareWindowsVersionMinor(2)))
+		{
+			if (IsWindows10())
+			{
+				sOSName = "Windows 10.0";
+			}
+			else
+			{
+				sOSName = "Windows 8";
+			}
+		}
+		else if ((CompareWindowsVersionMinor(1)))
+		{
+			sOSName = "Windows 7";
+		}
+		else if ((CompareWindowsVersionMinor(0)))
+		{
+			sOSName = "Windows Vista";
+		}
+	}
+	else if (CompareWindowsVersionMajor(5))
+	{
+		if (CompareWindowsVersionMinor(1))
+		{
+			sOSName = "Windows XP";
+		}
+	}
+
+	m_sOsName = sOSName;
+}
+
+void ComputerInfo::ParseCPU()
 {
     int CPUInfo[4] = {-1};
-    unsigned   nExIds, i =  0;
-    char CPUBrandString[0x40];
- 
+    unsigned nExIds;
+	char CPUBrandString[0x40] = { 0 };
+
     __cpuid(CPUInfo, 0x80000000);
     nExIds = CPUInfo[0];
-    for (i=0x80000000; i<=nExIds; ++i)
+
+    for (uint32 i = 0x80000000; i <= nExIds; ++i)
     {
-        __cpuid(CPUInfo, i);
- 
-        if  (i == 0x80000002)
-            memcpy(CPUBrandString, CPUInfo, sizeof(CPUInfo));
-        else if  (i == 0x80000003)
-            memcpy(CPUBrandString + 16, CPUInfo, sizeof(CPUInfo));
-        else if  (i == 0x80000004)
-            memcpy(CPUBrandString + 32, CPUInfo, sizeof(CPUInfo));
+    	__cpuid(CPUInfo, i);
+
+    	if  (i == 0x80000002)
+    		memcpy(CPUBrandString, CPUInfo, sizeof(CPUInfo));
+    	else if  (i == 0x80000003)
+    		memcpy(CPUBrandString + 16, CPUInfo, sizeof(CPUInfo));
+    	else if  (i == 0x80000004)
+    		memcpy(CPUBrandString + 32, CPUInfo, sizeof(CPUInfo));
     }
- 
-    m_sCpuName = CPUBrandString;
- 
-    /************************************/
-    char Buffer[_MAX_PATH];
-    DWORD BufSize = _MAX_PATH;
-    DWORD dwMHz = _MAX_PATH;
-    HKEY hKey;
- 
-    long lError = RegOpenKeyEx(HKEY_LOCAL_MACHINE,
-            "HARDWARE\\DESCRIPTION\\System\\CentralProcessor\\0",
-             0,
-             KEY_READ,
-             &hKey);
-     
-    if(lError != ERROR_SUCCESS)
+
+	m_sCpuName = STRING_BUILDER->RemoveSpaceAfterString(CPUBrandString);
+
+	/************************************/
+	//char Buffer[_MAX_PATH];
+	DWORD BufSize = _MAX_PATH;
+	DWORD dwMHz = _MAX_PATH;
+	HKEY hKey;
+
+	long lError = RegOpenKeyExA(HKEY_LOCAL_MACHINE,
+                        "HARDWARE\\DESCRIPTION\\System\\CentralProcessor\\0",
+                        0,
+                        KEY_READ,
+                        &hKey);
+#if 0
+    if (lError != ERROR_SUCCESS)
     {
-           FormatMessage(FORMAT_MESSAGE_FROM_SYSTEM,
+           FormatMessageA(FORMAT_MESSAGE_FROM_SYSTEM,
                          NULL,
                          lError,
                          0,
@@ -119,36 +195,80 @@ void ComputerInfo::parseCPU()
                          _MAX_PATH,
                          0);
     }
- 
-    RegQueryValueEx(hKey, "~MHz", NULL, NULL, (LPBYTE) &dwMHz,
-                    &BufSize);
- 
-    char string[512] = { 0 };
-     
-    sprintf(string, "%i", dwMHz);
- 
-    m_sCpuSpeed = std::string(string) + " MHz";
+#endif
+
+    RegQueryValueExA(hKey, "~MHz", NULL, NULL, (LPBYTE) &dwMHz, &BufSize);
+
+	char string[512] = { 0 };
+	
+	sprintf(string, "%i", dwMHz);
+
+	m_sCpuSpeed = std::string(string) + " MHz";
 }
- 
-void ComputerInfo::parseMemory()
+
+void ComputerInfo::ParseMemory()
 {
-    MEMORYSTATUSEX status;
-     
-    status.dwLength = sizeof(status);
- 
+	MEMORYSTATUSEX status;
+	
+	status.dwLength = sizeof(status);
+
     GlobalMemoryStatusEx(&status);
- 
-    int totalPhysicalMem = 0;
-    int availableMem = 0;
- 
-    totalPhysicalMem = (int) status.ullTotalPhys / 1024;
+
+    __int64 totalPhysicalMem = 0;
+	__int64 availableMem = 0;
+
+    totalPhysicalMem = status.ullTotalPhys / 1024;
     totalPhysicalMem = (totalPhysicalMem / 1024) + 1;
- 
-    availableMem = (int) status.ullAvailPhys / 1024;
+
+    availableMem = status.ullAvailPhys / 1024;
     availableMem = (availableMem / 1024) + 1;
- 
-    m_sTotalMemory = MiscManager::intToString(totalPhysicalMem) +
-                   " MB";
-    m_sAvailableMemory = MiscManager::intToString(availableMem) +
-                       " MB";
+
+    m_sTotalMemory = STRING_BUILDER->IntegerToString((int) totalPhysicalMem) + " MB";
+    m_sAvailableMemory = STRING_BUILDER->IntegerToString((int) availableMem) + " MB";
+}
+
+void ComputerInfo::ParseHDSpace()
+{
+	int const drive = _getdrive();
+
+	struct _diskfree_t diskfree;
+	_getdiskfree(drive, &diskfree);
+
+	unsigned __int64 const total = diskfree.sectors_per_cluster * diskfree.bytes_per_sector * diskfree.avail_clusters;
+
+	m_sHDDAvailableMemory = STRING_BUILDER->IntegerToString((int)total / 1024 / 1024) + " GB";
+}
+
+void ComputerInfo::GetWindowsInformations(SPCWindowsInformation& informations)
+{
+	//return; // FIX bug thread
+
+	// Always call Begin() method before doing any operation with WINDOWS_API_QUERIES
+	// because of the multithreading concurency issues
+
+	//WINDOWS_API_QUERIES->Begin();
+
+	WINDOWS_API_QUERIES->InitializeWSQLQueries();
+
+	//m_mutex.try_lock();
+
+		WINDOWS_API_QUERIES->WSQLQuery(L"select * from Win32_OperatingSystem");
+
+	//m_mutex.unlock();
+
+		WindowsAPIQueries::QueryResult result;
+		WINDOWS_API_QUERIES->WSQLFetchArray(result);
+
+	// Always call End() after any operation
+	//WINDOWS_API_QUERIES->End();
+
+	if (result.count(L"Version") > 0)
+	{
+		informations.WindowsVersion = result[L"Version"].GetFirstParameterAsString();
+	}
+
+	if (result.count(L"Caption") > 0)
+	{
+		informations.WindowsName = result[L"Caption"].GetFirstParameterAsString();
+	}
 }

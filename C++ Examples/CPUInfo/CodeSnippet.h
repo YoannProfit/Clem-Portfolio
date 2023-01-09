@@ -29,6 +29,7 @@ public:
 private:
     void ParseSystemProcessorCount();
     bool ParseProcessorData();
+	
     uint32 CountBits(uint64 bitMask);
  
 private:
