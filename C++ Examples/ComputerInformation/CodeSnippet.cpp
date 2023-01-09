@@ -1,16 +1,14 @@
 /* How to retrieve computer's information - C++ Code Snippet */
 
-#include "Framework.h"
-
 using namespace fw;
 
 template<> ComputerInfo* Singleton<ComputerInfo>::ms_instance = nullptr;
 
 ComputerInfo::ComputerInfo()
 {
-    ParseOSName();
-    ParseCPU();
-    ParseMemory();
+	ParseOSName();
+	ParseCPU();
+	ParseMemory();
 	ParseHDSpace();
 }
 
