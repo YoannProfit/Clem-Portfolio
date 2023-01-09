@@ -1,9 +1,9 @@
 //----------------------------------------------------
-// Auteur : Clément Profit
+// Auteur : ClÃ©ment Profit
 // Nom du fichier : PageManager.h
-// Date de création : Octobre 2015
-// Description : Classe qui gère les pages de
-// la mémoire vive
+// Date de crÃ©ation : Octobre 2015
+// Description : Classe qui gÃ¨re les pages de
+// la mÃ©moire vive
 //----------------------------------------------------
 
 #ifndef PAGE_MANAGER_H

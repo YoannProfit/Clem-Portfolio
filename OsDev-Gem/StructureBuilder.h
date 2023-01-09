@@ -1,7 +1,7 @@
 //----------------------------------------------------
-// Auteur : Clément Profit
+// Auteur : ClÃ©ment Profit
 // Nom du fichier : StructureBuilder.h
-// Date de création : Octobre 2015
+// Date de crÃ©ation : Octobre 2015
 // Description : Permet de construire une structure
 // dynamiquement.
 //----------------------------------------------------
@@ -60,10 +60,10 @@ public:
 private:
 	size_t m_iSize;
 	
-	char* m_pStructure;
+	char* m_pStructurePtr;
 	
 	/* Tableau qui associe un nom d'attribut au 
-	   nombre d'octets alloués */
+	   nombre d'octets allouÃ©s */
 	Core::Map<Core::String, size_t> m_aFields;
 	
 	bool m_bBuilt;

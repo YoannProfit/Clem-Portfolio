@@ -1,8 +1,8 @@
 //----------------------------------------------------
-// Auteur : Clément Profit
+// Auteur : ClÃ©ment Profit
 // Nom du fichier : LuaInterpreter.h
-// Date de création : Octobre 2015
-// Description : Implémentation du langage Lua
+// Date de crÃ©ation : Octobre 2015
+// Description : ImplÃ©mentation du langage Lua
 //----------------------------------------------------
 
 #ifndef LUA_INTERPRETER_H
