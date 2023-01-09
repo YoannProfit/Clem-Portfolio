@@ -1,0 +1,444 @@
+body 
+{
+	background-image: url("background_fractals_blurred.png");
+	background-size: contain;
+	background-repeat: repeat-y;
+	background-attachment: fixed;
+	cursor: url(WoW.png) 2 1, auto;
+	background-color: black;
+	background-position: center;
+}
+
+header
+{
+	 text-align: center;
+	 font-family: Arial;
+	 font-size: 34px;
+	 color: white;
+}
+
+.croix
+{
+	width: 20px;
+}
+
+.lien
+{
+	color: blue;
+	text-decoration: underline;
+	outline: 0;
+	font-size: 30px;
+}
+
+.lien_article
+{
+	color: blue;
+	text-decoration: underline;
+	outline: 0;
+	font-size: 30px;
+}
+
+.panel_admin_text
+{
+	color: greenyellow;
+	cursor: none;
+}
+
+.article_edit
+{
+	width: 52.3vw;	
+}
+
+.arrow_left
+{	
+	width: 20px;
+	
+	position: relative;
+	
+    animation-name: arrow_move_left;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+	
+	display: inline;
+}
+
+@keyframes arrow_move_left 
+{
+    0%   {left:0px; top:0px;}
+    25%  {left:4px; top:0px;}
+    50%  {left:6px; top:0px;}
+    75%  {left:4px; top:0px;}
+    100% {left:0px; top:0px;}
+}
+
+@keyframes arrow_move_right
+{
+    0%   {left:6px; top:0px;}
+    25%  {left:4px; top:0px;}
+    50%  {left:0px; top:0px;}
+    75%  {left:4px; top:0px;}
+    100% {left:6px; top:0px;}
+}
+
+.arrow_right
+{	
+	width: 20px;
+	
+	position: relative;
+	
+    animation-name: arrow_move_right;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+	
+	display: inline;
+}
+
+.nombre_heure
+{
+	color: #00ff00;
+}
+
+.nombre_articles
+{
+	color: #ff4000;
+}
+
+.nombre_videos
+{
+	color: orange;
+}
+
+.bar
+{
+	position: fixed;
+	z-index: 300;
+	top: 0px;
+	left: 0px;
+	z-index: 4;
+}
+
+.no_cursor
+{
+	cursor: none;
+}
+
+.panel_text
+{
+	top: 2px;
+	left: 3px;
+	font-size: 15px;
+	color: white;
+	font-family: Arial;
+	z-index: 6;
+	position: fixed;
+}
+
+.alert
+{
+	height: 2.3vw;	
+	vertical-align: middle;
+}
+
+.bouton
+{
+	width: 13.0vw;
+	height: 10.0vh;
+    border: 3px solid #FE2E64;
+}
+
+.arrow
+{
+	width: 5.3vw;	
+	vertical-align: middle;
+}
+
+.table_cell_gauche
+{
+	display: table-cell;	
+}
+
+.menu_gauche  
+{
+    border: 3px solid orange;
+    padding: 12px;
+	color: white;
+	margin-left: 20px;
+	margin-top: 0px;
+	margin-right: 3.4vw;
+}
+
+.text
+{
+	 font-size: 28px;
+}
+
+.programmation_image
+{
+	width: 60.8vw;	
+	vertical-align: middle;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.footer_image
+{
+	width: 24.0vw;
+}
+
+.panel_link 
+{
+	text-decoration: none;	
+	color: white;	
+}
+
+a
+{
+	text-decoration: underline;	
+	color: red;
+}
+
+a:hover
+{
+	text-decoration: none;	
+	color: orange;
+}
+
+.menu_image
+{
+	height: 4.2vw;
+	vertical-align: middle;
+}
+
+.logo
+{
+	width: 8vw;
+	vertical-align: middle;
+}
+
+.mur_externe
+{
+	display: table-cell;
+	margin-bottom: 100px;
+	background-color: rgba(0, 0, 0, 0.82);
+	border: 3px solid orange;
+}
+
+.mur_interne
+{
+    width: 60vw;
+    margin-left: 60px;
+    margin-right: 60px;
+	margin-top: 3%;
+	margin-bottom: 5%;
+	padding-left: 20px;
+	background-color: white;
+	border: 3px solid #ff5050;
+	opacity: 0.95;
+}
+
+.content 
+{
+	display: table;
+	border-color: black;
+	border-width: 1px;
+	font-family: "Arial", Times, serif;
+	font-size: 23px;
+	margin-right: 10.0vw;
+}
+
+.square, .petite_image
+{
+	width: 22px;
+	height: 22px;
+	vertical-align: middle;
+	margin-right: 10px;
+}
+
+.text
+{
+	 font-size: 28px;
+}
+
+.text_title
+{
+	 font-size: 28px;
+	 text-decoration: underline;
+}
+
+.presentation
+{
+	padding-top: 20px;
+	margin-left: 30px;
+	text-align: left;
+}
+
+footer
+{
+	 text-align: center;
+	 font-family: poppins;
+	 font-size: 36px;
+	 color: white;
+}
+
+.hr_blue
+{ 
+	width: 60%;
+	border: 0; 
+	height: 3px; 
+	background-image: linear-gradient(to right, blue, #08088A, blue); 
+}
+
+hr
+{ 
+	width: 60%;
+	border: 0; 
+	height: 3px; 
+	background-image: linear-gradient(to right, red, orange, red); 
+}
+
+.grand_titre
+{
+	margin-top: 20px;
+	text-align: center;
+	font-size: 32px;
+	vertical-align: middle;
+	color: white;
+}
+
+.petit_titre
+{
+	font-size: 28px;
+	color: #ff8000;
+	vertical-align: middle;
+}
+
+.code
+{
+	font-size: 17px;	
+} 
+
+.code_src_titre
+{
+	font-size: 20px;	
+	margin-bottom: 8px;
+} 
+
+.carac
+{
+	font-size: 20px;	
+	margin-bottom: 8px;
+} 
+
+.image
+{
+    max-width: 90%;
+    height: auto;
+	border: 5px solid orange;
+}
+
+.icone
+{
+	width: 8%;
+	vertical-align: middle;
+}
+
+.red
+{
+	color: red;
+}
+
+.orange
+{
+	color: orange;
+}
+
+.idea
+{
+	width: auto;
+	height: 82px;
+	vertical-align: middle;
+}
+
+.idea_text
+{
+	text-align: center;
+	font-size: 40px;
+	vertical-align: middle;
+}
+
+.center
+{
+	text-align: center;
+}
+
+@font-face 
+{
+    font-family: poppins;
+    src: url(./fonts/Poppins-Light.ttf);
+}
+
+/* Tooltip */
+
+.about tooltip
+{
+	position: absolute;
+	color: #000000;
+	background: #FFFFFF;
+	visibility: hidden;
+	border-radius: 4px;
+	border: 4px solid #FF6600;
+	padding: 12px;
+	font-family: Arial;
+	font-size: 24px;
+	pointer-events : none;
+}
+
+.about:hover tooltip
+{
+	position: fixed;
+	visibility: visible;
+	opacity: 0.95;
+	z-index: 100;	
+}
+
+.cadre_bas
+{
+	z-index: 200;	
+}
+
+arrow
+{
+	//position: absolute;
+	visibility: hidden;
+
+	pointer-events : none;
+	
+	background-image: url(flèche3.png);
+	background-repeat: round;
+	
+	height: 50px;
+	width: 50px;
+	
+	z-index: 100;
+	
+	position: fixed;
+}
+
+.nom_fichier
+{
+	color: orange;
+	font-size : 20px;
+	display: inline;
+}
+
+.icon_edit_article
+{
+	height: 40px;
+	width: 40px;
+}
+
+.lexique_entry
+{
+	color: orange;
+	text-decoration: none;
+}
