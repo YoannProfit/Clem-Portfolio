@@ -8,5 +8,5 @@ So, here the things :
 
 - PHP Dev-Blog
 - PHP Modules
-- Some C++ Code Snippets
+- Some General C++ Code Snippets
 - Gem OS
