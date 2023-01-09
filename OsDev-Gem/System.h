@@ -1,8 +1,8 @@
 //----------------------------------------------------
-// Auteur : Clément Profit
+// Auteur : ClÃ©ment Profit
 // Nom du fichier : System.h
-// Date de création : Octobre 2015
-// Description : Classe pour gérer le système de l'OS.
+// Date de crÃ©ation : Octobre 2015
+// Description : Classe pour gÃ©rer le systÃ¨me de l'OS.
 //----------------------------------------------------
 
 #ifndef SYSTEM_H

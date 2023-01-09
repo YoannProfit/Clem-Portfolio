@@ -1,9 +1,9 @@
 //----------------------------------------------------
-// Auteur : Clément Profit
+// Auteur : ClÃ©ment Profit
 // Nom du fichier : DataParameters.h
-// Date de création : Octobre 2015
-// Description : Cette classe qui permet de gérer 
-// et de regrouper des données ensemble
+// Date de crÃ©ation : Octobre 2015
+// Description : Cette classe qui permet de gÃ©rer 
+// et de regrouper des donnÃ©es ensemble
 //----------------------------------------------------
 
 #ifndef DATA_PARAMETERS_H
@@ -15,13 +15,13 @@ template<typename CharType, typename StringType>
 class DataParameters
 {
 public:
-    // Différents types de variables à stocker
+    // DiffÃ©rents types de variables Ã  stocker
     struct Param { int i; float f; StringType s; };
   
     DataParameters();
     virtual ~DataParameters();
       
-    // Premier numéro d'index (c'est-à-dire le numéro 0)
+    // Premier numÃ©ro d'index (c'est-Ã -dire le numÃ©ro 0)
     DataParameters(const int param);
     DataParameters(const float param);
     DataParameters(const CharType* param);
@@ -53,7 +53,7 @@ public:
     float GetParameterAsFloat(const StringType& sParamName);
     const CharType* GetParameterAsString(const StringType& sParamName);
   
-    // Par accès au premier argument
+    // Par accÃ¨s au premier argument
     Param* GetFirstParameter();
     int GetFirstParameterAsInt();
     float GetFirstParameterAsFloat();
@@ -61,7 +61,7 @@ public:
  
     uint16 GetParamNumber();
   
-    // Opérateurs >> flux pour lire les données
+    // OpÃ©rateurs >> flux pour lire les donnÃ©es
     DataParameters& operator >>(bool& data);
     DataParameters& operator >>(int& data);
     DataParameters& operator >>(unsigned int& data);
@@ -69,7 +69,7 @@ public:
     DataParameters& operator >>(CharType* data);
     DataParameters& operator >>(StringType& data);
  
-    // Opérateurs << flux pour écrire des données
+    // OpÃ©rateurs << flux pour Ã©crire des donnÃ©es
     DataParameters& operator <<(bool data);
     DataParameters& operator <<(int data);
     DataParameters& operator <<(unsigned int data);
@@ -79,14 +79,14 @@ public:
  
     Core::Map<StringType, Param>& GetParameters();
  
-    // Réinitialise les flux sortants
+    // RÃ©initialise les flux sortants
 	void ResetStream();
 
 private:
-    // Liste des paramètres
+    // Liste des paramÃ¨tres
     Core::Map<StringType, Param> m_params;
  
-    // Numéro de paramètre courant
+    // NumÃ©ro de paramÃ¨tre courant
     uint16 m_iIndex;
  
     // Position de lecture du stream courant

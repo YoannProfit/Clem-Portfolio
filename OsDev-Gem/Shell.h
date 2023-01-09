@@ -53,9 +53,9 @@ public:
 	void Print(const StringType& sText);
 	
    	void Print(const StringType& sMessage, 
-		Core::Colour foregroundColour = Core::Colour::Black, 
-		Core::Colour backgroundColour = Core::Colour::White, 
-		MessageType type = MessageType::MSG_SYSTEM);
+		       Core::Colour foregroundColour = Core::Colour::Black, 
+		       Core::Colour backgroundColour = Core::Colour::White, 
+		       MessageType type = MessageType::MSG_SYSTEM);
 
 	void Print(const Line* pLine);
 	void Print(const uint32 iValue);
@@ -67,22 +67,22 @@ public:
 	void AddCharacter(CharType c);
 	void AddCharactersLine();
 
-    	// Ajoute une ligne vide
-    	void AddBlankLine();	
+    // Ajoute une ligne vide
+    void AddBlankLine();	
 	// Savoir si le Shell est visible
 	bool IsVisible();
 	// Ajoute à l'historique une commande
 	void AddToHistory(const StringType& sCmd);
 
-    	// Ajoute une ligne dans la console
-    	void AddLine(const Line* pLine); 
+    // Ajoute une ligne dans la console
+    void AddLine(const Line* pLine); 
 
 	void SetPrintColor(const Core::Color foreground, const Core::Color background);
 	void SetPrintType(const MessageType type);
 
 	// Entrée utilisateur
-    	virtual void SoloKeyPressed(const KeyEvent<CharType>& arg);
-    	virtual void SoloKeyReleased(const KeyEvent<CharType>& arg);
+    virtual void SoloKeyPressed(const KeyEvent<CharType>& arg);
+    virtual void SoloKeyReleased(const KeyEvent<CharType>& arg);
 
 	void UpdateBlinkingElements();
 
@@ -120,19 +120,19 @@ protected:
 	virtual void Clear();
 
 private:
-    	// Obtient le texte du type spécifié
-    	const StringType GetMessageType(const MessageType type);
-    	// Obtient la couleur du type spécifié
+    // Obtient le texte du type spécifié
+    const StringType GetMessageType(const MessageType type);
+    // Obtient la couleur du type spécifié
 	const Core::Colour GetMessageColour(const MessageType type);
 	// Est-ce que le caractère tappé est autorisé ?
 	bool IsCharAuthorized();
 	// Charge les commandes par défaut
-    	void LoadDefaultCommands();
+    void LoadDefaultCommands();
 	/* Complète un morceau de commande par la touche
 	   tabulation */
-    	void TabComplete();
+    void TabComplete();
 	// Analyse les paramètres d'une commande tappée
-    	void GetCommandLineArguments(const StringType& sCommandLine, DataParameters& param);
+    void GetCommandLineArguments(const StringType& sCommandLine, DataParameters& param);
 	// On affiche une unique ligne
 	void DrawLine(Line* pLine);
 
@@ -140,16 +140,16 @@ private:
 	Core::Array<Line<StringType>*> m_aLines;
 	Core::Array<Line<StringType>*> m_aHookedLines;
 
-    	uint16 m_iLinesStart;
-    	uint16 m_iLinesOffset;
+    uint16 m_iLinesStart;
+    uint16 m_iLinesOffset;
 
 	uint32 m_iCurrentXPos;
 	uint32 m_iCurrentYPos;
 
-    	CommandLinePrompt<StringType>* m_pPrompt;
-    	CommandsHistory<StringType>* m_pHistory;
+    CommandLinePrompt<StringType>* m_pPrompt;
+    CommandsHistory<StringType>* m_pHistory;
 	
-    	Core::Array<StringType> m_tabHistory;
+    Core::Array<StringType> m_tabHistory;
 
 	Core::Color m_currentForeground, m_currentBackground;
 
@@ -213,21 +213,22 @@ public:
     	virtual ~Line();
 	
     	void AddTextElement(const StringType& sTextElement, 
-		Core::Colour foregroundColour = Core::Colour::White, 
-		Core::Colour backgroundColour = Core::Colour::Black, 
-		bool bBlinking = false);
+							Core::Colour foregroundColour = Core::Colour::White, 
+							Core::Colour backgroundColour = Core::Colour::Black, 
+							bool bBlinking = false);
 
     	void AddTextElementSolo(const StringType& sTextElement, 
-		Core::Colour foregroundColour = Core::Colour::White, 
-		Core::Colour backgroundColour = Core::Colour::Black, 
-		bool bBlinking = false);
+								Core::Colour foregroundColour = Core::Colour::White, 
+								Core::Colour backgroundColour = Core::Colour::Black, 
+								bool bBlinking = false);
  
     	void GetTextElements(Core::Array<TextElement<StringType>*>& elems);
  
-	size_t GetTextElementsCount();
+		size_t GetTextElementsCount();
  
     	Shell::MessageType GetType();
- 	void Clear();
+		
+		void Clear();
 
 private:
     	void ParseLines(const StringType& sText, Core::Array<StringType>& moreLines);
@@ -237,7 +238,7 @@ private:
  
     	Shell::MessageType m_type;
  
-	Shell* m_pShellOwner;
+		Shell* m_pShellOwner;
 };
 
 // ----------------------------------- //

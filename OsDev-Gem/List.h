@@ -1,10 +1,10 @@
 //----------------------------------------------------
-// Auteur : Clément Profit
+// Auteur : ClÃ©ment Profit
 // Nom du fichier : Array.h
-// Date de création : Octobre 2015
-// Description : Une classe pour gérer une liste
+// Date de crÃ©ation : Octobre 2015
+// Description : Une classe pour gÃ©rer une liste
 // par un algorithme de liste circulaire doublement
-// chaînée
+// chaÃ®nÃ©e
 //----------------------------------------------------
 
 #ifndef LIST_H

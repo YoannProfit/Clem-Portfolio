@@ -1,8 +1,8 @@
 //----------------------------------------------------
-// Auteur : Clément Profit
+// Auteur : ClÃ©ment Profit
 // Nom du fichier : PIT.h
-// Date de création : Octobre 2015
-// Description : Une classe pour gérer les ticks
+// Date de crÃ©ation : Octobre 2015
+// Description : Une classe pour gÃ©rer les ticks
 // par count (PIT system)
 //----------------------------------------------------
 

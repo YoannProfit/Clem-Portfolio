@@ -1,9 +1,9 @@
 //----------------------------------------------------
-// Auteur : Clément Profit
+// Auteur : ClÃ©ment Profit
 // Nom du fichier : Buffer.h
-// Date de création : Octobre 2015
-// Description : Cette classe permet de gérer un buffer
-// (un tampon de donnée)
+// Date de crÃ©ation : Octobre 2015
+// Description : Cette classe permet de gÃ©rer un buffer
+// (un tampon de donnÃ©e)
 //---------------------------------------------------
 
 #ifndef BUFFER_H
@@ -16,8 +16,11 @@ public:
 	virtual ~Buffer(); 
 		
 	void	Add(u8* c,u32 s);
+	
 	u32		Get(u8* c,u32 s);
+	
 	void	Clear();
+	
 	u32		IsEmpty();
 		
 	Buffer &operator>>(char *c);

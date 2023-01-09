@@ -41,19 +41,19 @@
 */
 struct SegmentDescriptor
 {
-	uint16 iLimitLow;
-	uint16 iBaseLow;
-	uint8 iBaseMiddle;
-	uint8 iAccess;
-	uint8 iGranularity;
-	uint8 iBaseHigh;
+	uint16 			iLimitLow;
+	uint16 			iBaseLow;
+	uint8 			iBaseMiddle;
+	uint8 			iAccess;
+	uint8 			iGranularity;
+	uint8 			iBaseHigh;
 } GEM_PACK;
 
 
 struct GDTRegister
 {
-	uint16 iLimitSize;
-	uint32 iBaseAdress; // L'adresse de la première entrée de la GDT
+	uint16 			iLimitSize;
+	uint32 			iBaseAdress; // L'adresse de la première entrée de la GDT
 } GEM_PACK;
 
 // ----------------------------------- //

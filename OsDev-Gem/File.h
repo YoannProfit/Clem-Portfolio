@@ -1,9 +1,9 @@
 //----------------------------------------------------
-// Auteur : Clément Profit
+// Auteur : ClÃ©ment Profit
 // Nom du fichier : File.h
-// Date de création : Octobre 2015
-// Description : Une classe qui gère les fichiers
-// du système
+// Date de crÃ©ation : Octobre 2015
+// Description : Une classe qui gÃ¨re les fichiers
+// du systÃ¨me
 //----------------------------------------------------
 
 

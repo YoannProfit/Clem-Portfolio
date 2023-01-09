@@ -25,7 +25,7 @@ void System::Reboot()
 {
 	uint8 iGood = 0x02;
 	
-	/* On attend que le buffer de sortie du systËme de ports
+	/* On attend que le buffer de sortie du syst√®me de ports
 	   soit plein */
 	while ((iGood & 0x02) != 0)
 	{
@@ -51,7 +51,7 @@ void System::SetCurrentTTY(TTY* pCurrentTTY)
 {
 	if (m_pCurrentTTY != nullptr)
 	{
-		/* On dÈsactive la reception des entrÈes
+		/* On d√©sactive la reception des entr√©es
 		   utilisateur pour l'ancien TTY */
 		m_pCurrentTTY->DisableInput();
 	}
@@ -60,7 +60,7 @@ void System::SetCurrentTTY(TTY* pCurrentTTY)
 
 	m_pCurrentTTY->EnableInput();
 
-	// On affiche le contenu du prÈsent TTY
+	// On affiche le contenu du pr√©sent TTY
 	m_pCurrentTTY->RefreshLines();
 }
 
@@ -116,7 +116,7 @@ void System::SoloKeyReleased(const KeyEvent& arg)
 
 void System::CreateTTYs()
 {
-	AssertMsg(m_aTTYs.Size() == 0, "TTYs dÈj‡ crÈes !");
+	AssertMsg(m_aTTYs.Size() == 0, "TTYs d√©j√† cr√©es !");
 
 	for (uint8 i = 0; i < GEM_TTYS_COUNT; i++)
 	{

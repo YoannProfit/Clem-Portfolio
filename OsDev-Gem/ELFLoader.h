@@ -1,9 +1,9 @@
 //----------------------------------------------------
-// Auteur : Clément Profit
+// Auteur : ClÃ©ment Profit
 // Nom du fichier : ELFLoader.h
-// Date de création : Octobre 2015
-// Description : Une classe pour gérer les fichiers
-// éxécutables au format ELF
+// Date de crÃ©ation : Octobre 2015
+// Description : Une classe pour gÃ©rer les fichiers
+// Ã©xÃ©cutables au format ELF
 //----------------------------------------------------
 
 #ifndef ELF_LOADER_H
@@ -14,7 +14,7 @@
 #include "Array.h"
 #include "Singleton.h"
 
-/* En-tête d'un fichier éxecutable de format ELF */
+/* En-tÃªte d'un fichier Ã©xecutable de format ELF */
 struct ELFHeader
 {
 	uchar id[GEM_ELF_IDENT_SIZE];			/* Identification ELF */

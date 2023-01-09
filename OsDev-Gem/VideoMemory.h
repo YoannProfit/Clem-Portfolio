@@ -1,9 +1,9 @@
 //----------------------------------------------------
-// Auteur : Clément Profit
+// Auteur : ClÃ©ment Profit
 // Nom du fichier : VideoMemory.h
-// Date de création : Octobre 2015
-// Description : Classe qui représente 
-// la mémoire vidéo mappée par le contrôleur vidéo
+// Date de crÃ©ation : Octobre 2015
+// Description : Classe qui reprÃ©sente 
+// la mÃ©moire vidÃ©o mappÃ©e par le contrÃ´leur vidÃ©o
 //----------------------------------------------------
 
 
@@ -24,7 +24,7 @@ namespace Kernel
 		virtual ~VideoMemory();
 	
 		void PutCharacter(const uint32 iPosX, const uint32 iPosY, const char c, 
-			const Core::Color foreground, const Core::Color background);
+						  const Core::Color foreground, const Core::Color background);
 
 		void PutCharacter(const Core::TextElement& entry);
 
@@ -43,9 +43,9 @@ namespace Kernel
 		void UpdateVideoMemory();
 
 	private:
-		const uint8* m_aVideoRamStart;
+		const uint8* 				m_aVideoRamStart;
 
-		Core::Array2D<uint16> m_aEntries;
+		Core::Array2D<uint16> 		m_aEntries;
 	};
 }
 

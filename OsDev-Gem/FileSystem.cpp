@@ -41,8 +41,6 @@ bool Filesystem::Initialize()
 File* Filesystem::GetPath(const char* sPath)
 {
 	File* pFilePath = m_pRoot;
-
-	c
 }
 
 File* Filesystem::GetRoot()

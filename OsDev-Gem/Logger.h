@@ -1,9 +1,9 @@
 //----------------------------------------------------
-// Auteur : Clément Profit
+// Auteur : ClÃ©ment Profit
 // Nom du fichier : Logger.h
-// Date de création : Octobre 2015
+// Date de crÃ©ation : Octobre 2015
 // Description : Classe pour enregistrer tous les 
-// messages systèmes de l'OS.
+// messages systÃ¨mes de l'OS.
 //----------------------------------------------------
 
 #ifndef LOGGER_H

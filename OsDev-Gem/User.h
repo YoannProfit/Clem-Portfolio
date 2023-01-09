@@ -16,14 +16,16 @@ namespace Core
 	class User
 	{
 		public:
-
+			User();
+			virtual ~User();
+			
 			void SetPassword(char* sName);
 			char* GetPassword();
 		
 		protected:
-			u32 utype;
+			uint32 m_iType;
 
-			char password[512];
+			char m_sPassword[512];
 	};
 };
 

@@ -1,9 +1,9 @@
 //----------------------------------------------------
-// Auteur : Clément Profit
+// Auteur : ClÃ©ment Profit
 // Nom du fichier : InterruptlDescriptorTable.h
-// Date de création : Octobre 2015
-// Description : La IDT se charge définir les routines
-// d'interruption qui doivent être appelées
+// Date de crÃ©ation : Octobre 2015
+// Description : La IDT se charge dÃ©finir les routines
+// d'interruption qui doivent Ãªtre appelÃ©es
 //----------------------------------------------------
 
 #ifndef INTERRUPT_DESCRIPTOR_MANAGER_H
@@ -17,15 +17,15 @@
  Le descripteur d'interruption a pour taille 
  totale 64 bits.
 
- Ce descripteur précise le sélecteur ('select', une entrée de la GDT),
- un décalage ('offset') et son type.
+ Ce descripteur prÃ©cise le sÃ©lecteur ('select', une entrÃ©e de la GDT),
+ un dÃ©calage ('offset') et son type.
  
- Structure générale d'un segment d'interruption (dans l'ordre) : 
+ Structure gÃ©nÃ©rale d'un segment d'interruption (dans l'ordre) : 
  
-	- Les 16 premiers bits (en partant de celui de poids faible) de la valeur de décalage (offset)
+	- Les 16 premiers bits (en partant de celui de poids faible) de la valeur de dÃ©calage (offset)
 	- L'adresse de la routine InterruptRoutineService
 	- Les 16 bits du type
-	- Les 16 dernier bits de la valeur de décalage
+	- Les 16 dernier bits de la valeur de dÃ©calage
 	 
 */
 struct InterruptDescriptor 
@@ -45,10 +45,10 @@ struct IDTRegister
 // ------------------------------------ //
 
 /*
- Une classe pour créer un descripteur 
- d'interruption à la volée
+ Une classe pour crÃ©er un descripteur 
+ d'interruption Ã  la volÃ©e
 
- /!\ Doit être instancier sur la pile 
+ /!\ Doit Ãªtre instancier sur la pile 
  lors de l'utilisation.
 */
 class InterruptionBuilder : public StructureBuilder
@@ -63,7 +63,7 @@ public:
 
 	InterruptDescriptor* GetDescriptor();
 	
-	/* Réinitialise la configuration du
+	/* RÃ©initialise la configuration du
 	   descripteur */
 	void Reset();
 	
@@ -80,7 +80,7 @@ private:
 
 // ------------------------------------ //
 
-/* Une classe pour établir la IDT et créer les différents
+/* Une classe pour Ã©tablir la IDT et crÃ©er les diffÃ©rents
    descripteurs d'interruption automatiquement */
 class InterruptDescriptorManager : public Singleton<InterruptDescriptorManager>
 {

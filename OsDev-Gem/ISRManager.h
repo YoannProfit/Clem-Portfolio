@@ -1,9 +1,9 @@
 //----------------------------------------------------
-// Auteur : Clément Profit
+// Auteur : ClÃ©ment Profit
 // Nom du fichier :  ISRManager.h
-// Date de création : Octobre 2015
+// Date de crÃ©ation : Octobre 2015
 // Description : Cette classe permet 
-// de définir les 'Interrupts Service Routines'
+// de dÃ©finir les 'Interrupts Service Routines'
 //----------------------------------------------------
 
 #ifndef INTERRUPT_SERVICE_ROUTINES_MANAGER_H

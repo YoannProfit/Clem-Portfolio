@@ -38,7 +38,7 @@ void DescriptorBuilder::SetGranularity(uint8 iGranularity)
 
 SegmentDescriptor* DescriptorBuilder::GetDescriptor()
 {
-	AssertMsg(m_bBuilt, "Le descripteur doit être construit avant d'y accéder !");
+	AssertMsg(m_bBuilt, "Le descripteur doit Ãªtre construit avant d'y accÃ©der !");
 	
 	return m_pDescriptor;
 }
@@ -103,7 +103,7 @@ bool SegmentDescriptorManager::Initialize()
 
 void SegmentDescriptorManager::CreateGDT()
 {
-	AssertMsg(m_pGDT == nullptr, "GDT déjà créée!");
+	AssertMsg(m_pGDT == nullptr, "GDT dÃ©jÃ  crÃ©Ã©e!");
 }
 
 void SegmentDescriptorManager::CreateNullDescriptor()

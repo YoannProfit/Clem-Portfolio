@@ -95,7 +95,7 @@ void StructureBuilder::Build()
 
 char* StructureBuilder::GetStructure()
 {
-	AssertMsg(m_bBuilt, "Le descripteur doit être configuré avant d'y accéder !");
+	AssertMsg(m_bBuilt, "Le descripteur doit Ãªtre configurÃ© avant d'y accÃ©der !");
 	
 	return m_pStructure;
 }

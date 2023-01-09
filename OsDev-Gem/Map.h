@@ -1,16 +1,16 @@
 //----------------------------------------------------
-// Auteur : Clément Profit
+// Auteur : ClÃ©ment Profit
 // Nom du fichier : Map.h
-// Date de création : Octobre 2015
-// Description : Une classe pour gérer un tableau associatif
+// Date de crÃ©ation : Octobre 2015
+// Description : Une classe pour gÃ©rer un tableau associatif
 // (comme pour la std::map du C++),
 //
-// Implémentée en tant que liste chainée
+// ImplÃ©mentÃ©e en tant que liste chainÃ©e
 //
-// Niveau performance en complexité algorithmtique
-// ce n'est pas la meilleur solution mais j'ai préféré
-// une approche par un algorithme simple à comprendre 
-// plutôt que prendre celui de l'arbre bicolor
+// Niveau performance en complexitÃ© algorithmtique
+// ce n'est pas la meilleur solution mais j'ai prÃ©fÃ©rÃ©
+// une approche par un algorithme simple Ã  comprendre 
+// plutÃ´t que prendre celui de l'arbre bicolor
 //----------------------------------------------------
 #ifndef MAP_H
 #define MAP_H
@@ -52,7 +52,7 @@ namespace Core
 				m_pCur = pPosition;
 			}
 				
-			// Une liste chainée finit toujours par 0
+			// Une liste chainÃ©e finit toujours par 0
 			bool AtEnd() const
 			{
 				return m_pCur == nullptr;
@@ -202,7 +202,7 @@ namespace Core
 			return false;
 		}
 		
-		// On ajoute un élément à la fin de la liste chainée
+		// On ajoute un Ã©lÃ©ment Ã  la fin de la liste chainÃ©e
 		void Set(const KeyType& k, const ValueType& v)
 		{
 			if (!HasKey(k))

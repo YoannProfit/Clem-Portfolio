@@ -142,7 +142,7 @@ std::map<StringType, DataParameters::Param>& DataParameters::GetParameters()
     return m_params;
 }
  
-/*************** Getters sans paramètres ***************/
+/*************** Getters sans paramÃ¨tres ***************/
   
 int DataParameters::GetFirstParameterAsInt()
 {
@@ -223,7 +223,7 @@ void DataParameters::PushParam(const StringType& param)
 }
  
 //----------------------------------------
-// Opérateurs >> pour lire les données
+// OpÃ©rateurs >> pour lire les donnÃ©es
 //----------------------------------------
 DataParameters& DataParameters::operator >>(bool& data)
 {
@@ -334,7 +334,7 @@ DataParameters& DataParameters::operator >>(StringType& data)
 }
  
 //----------------------------------------
-// Opérateurs << pour écrire des données
+// OpÃ©rateurs << pour Ã©crire des donnÃ©es
 //----------------------------------------
 DataParameters& DataParameters::operator <<(bool data)
 {

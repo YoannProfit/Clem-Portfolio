@@ -1,10 +1,10 @@
-//----------------------------------------------------
-// Auteur : Clément Profit
+passionate//----------------------------------------------------
+// Auteur : ClÃ©ment Profit
 // Nom du fichier : DebugManager.h
-// Date de création : Octobre 2015
+// Date de crÃ©ation : Octobre 2015
 // Description : Cette classe permet 
-// d'afficher les données des erreurs : 
-// registres, mémoire...
+// d'afficher les donnÃ©es des erreurs : 
+// registres, mÃ©moire...
 //----------------------------------------------------
 
 #ifndef DEBUG_MANAGER_H

@@ -1,9 +1,9 @@
 //----------------------------------------------------
-// Auteur : Clément Profit
+// Auteur : ClÃ©ment Profit
 // Nom du fichier : InputManager.h
-// Date de création : Octobre 2015
-// Description : Classe pour gérer les entrées clavier
-// et souris du système
+// Date de crÃ©ation : Octobre 2015
+// Description : Classe pour gÃ©rer les entrÃ©es clavier
+// et souris du systÃ¨me
 //----------------------------------------------------
 
 #ifndef INPUT_MANAGER_H
@@ -21,7 +21,7 @@ public:
 
 	// L'ID de la touche
 	const int key;
-	// La caractère correspondant de la touche
+	// La caractÃ¨re correspondant de la touche
 	const wchar_t CharType;
 };
 
@@ -77,10 +77,10 @@ public:
 	// Enregistre le receveur de touches clavier - ou Add??
 	void SetKeyListener(const KeyListener* pKeyListener);
 
-	// Renvoie la signification de la clé, ex : "F1" pour la touche F1
+	// Renvoie la signification de la clÃ©, ex : "F1" pour la touche F1
 	std::string GetKeyCodeAsString(const char key);
 
-	// Renvoie la touche correspondante à la clé
+	// Renvoie la touche correspondante Ã  la clÃ©
 	wchar_t GetKeyCodeAsWChar(const char key);
 
 private:	
@@ -110,8 +110,8 @@ private:
  
 	/* Pourquoi ici un unique objet ? 
 	   Car on a besoin que d'un seul KeyListener car 
-	   c'est soit la console, soit la messagerie qui ont besoin des entrées clavier 
-	   à la fois */
+	   c'est soit la console, soit la messagerie qui ont besoin des entrÃ©es clavier 
+	   Ã  la fois */
 	KeyListener* m_pKeyListener;
 };
 

@@ -1,9 +1,9 @@
 //----------------------------------------------------
-// Auteur : Clément Profit
+// Auteur : ClÃ©ment Profit
 // Nom du fichier : TTYManager.h
-// Date de création : Octobre 2015
-// Description : Cette classe permet de gérer les 
-// différentes consoles que le système diposent 
+// Date de crÃ©ation : Octobre 2015
+// Description : Cette classe permet de gÃ©rer les 
+// diffÃ©rentes consoles que le systÃ¨me diposent 
 // en appuyant (F1..)
 //----------------------------------------------------
 

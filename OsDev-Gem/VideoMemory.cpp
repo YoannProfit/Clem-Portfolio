@@ -36,8 +36,8 @@ void VideoMemory::UpdateVideoMemory()
 void VideoMemory::PutCharacter(uint32 iPosX, uint32 iPosY, const char c, 
 							  Core::Color foreground, Core::Color background)
 {
-	AssertMsg(iPosX <= GEM_VIDEO_MEMORY_WIDTH, "Dépassement de largeur");
-	AssertMsg(iPosY <= GEM_VIDEO_MEMORY_HEIGHT, "Dépassement de hauteur");
+	AssertMsg(iPosX <= GEM_VIDEO_MEMORY_WIDTH, "DÃ©passement de largeur");
+	AssertMsg(iPosY <= GEM_VIDEO_MEMORY_HEIGHT, "DÃ©passement de hauteur");
 
 	m_aEntries[iPosX, iPosY] = MakeEntry(c, foreground, background);
 
@@ -55,7 +55,7 @@ void VideoMemory::Clear()
 
 	uint16 blank = MakeEntry(' ', Core::Color::Black, Core::Color::Black);
 
-	// On remplit l'écran avec que des espaces
+	// On remplit l'Ã©cran avec que des espaces
 	for (uint16 x = 0; x < m_aEntries.GetWidth(); x++)
 	{
 		for (uint16 y = 0; y < m_aEntries.GetHeight(); y++)
@@ -69,8 +69,8 @@ void VideoMemory::Clear()
 
 void VideoMemory::RemoveCharacter(uint32 iPosX, uint32 iPosY)
 {
-	AssertMsg(iPosX <= GEM_VIDEO_MEMORY_WIDTH, "Dépassement de largeur");
-	AssertMsg(iPosY <= GEM_VIDEO_MEMORY_HEIGHT, "Dépassement de hauteur");
+	AssertMsg(iPosX <= GEM_VIDEO_MEMORY_WIDTH, "DÃ©passement de largeur");
+	AssertMsg(iPosY <= GEM_VIDEO_MEMORY_HEIGHT, "DÃ©passement de hauteur");
 
 	m_aEntries.Remove(iPosX, iPosY);
 
@@ -97,7 +97,7 @@ void VideoMemory::MakeTextElement(const uint32 iPosX, const uint32 iPosY, const 
 
 void VideoMemory::ClearLine(uint32 iPosY)
 {
-	AssertMsg(iPosY <= GEM_VIDEO_MEMORY_HEIGHT, "Dépassement de hauteur");
+	AssertMsg(iPosY <= GEM_VIDEO_MEMORY_HEIGHT, "DÃ©passement de hauteur");
 
 	for (uint16 x = 0; x < m_aEntries.GetWidth(); x++)
 	{
@@ -113,7 +113,7 @@ void VideoMemory::ClearLine(uint32 iPosY)
 
 void VideoMemory::RefreshLine(uint32 iPosY)
 {
-	AssertMsg(iPosY <= GEM_VIDEO_MEMORY_HEIGHT, "Dépassement de hauteur");
+	AssertMsg(iPosY <= GEM_VIDEO_MEMORY_HEIGHT, "DÃ©passement de hauteur");
 
 	for (uint16 x = 0; x < m_aEntries.GetWidth(); x++)
 	{

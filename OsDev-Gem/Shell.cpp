@@ -3,20 +3,22 @@
 template<> Shell* Singleton<Shell>::ms_instance = nullptr;
  
 Shell::Shell() :
-m_iCurrentXPos(0),
-m_iCurrentYPos(0),
-m_currentForeground(Core::Color::Black),
-m_currentBackground(Core::Color::White),
-m_pPrompt(nullptr),
-m_pHistory(nullptr),
-m_aLegalChars(GEM_INPUT_LEGAL_CHARS),
-m_currentMessageType(MessageType::MSG_SYSTEM),
-m_bPromptVisible(true),
-m_iMaxLinesDisplayed(0),
-m_iMaxCharDisplayed(0),
-m_pCurrentLine(nullptr)
+
+	m_iCurrentXPos(0),
+	m_iCurrentYPos(0),
+	m_currentForeground(Core::Color::Black),
+	m_currentBackground(Core::Color::White),
+	m_pPrompt(nullptr),
+	m_pHistory(nullptr),
+	m_aLegalChars(GEM_INPUT_LEGAL_CHARS),
+	m_currentMessageType(MessageType::MSG_SYSTEM),
+	m_bPromptVisible(true),
+	m_iMaxLinesDisplayed(0),
+	m_iMaxCharDisplayed(0),
+	m_pCurrentLine(nullptr)
+	
 {
-	// On réserve une ligne pour le prompt "[Bash]$"
+	// On rÃ©serve une ligne pour le prompt "[Bash]$"
 	SetMaxLinesDisplayed(GEM_TEXT_VIDEO_MEMORY_HEIGHT);
 	SetMaxCharDisplayed(GEM_TEXT_VIDEO_MEMORY_WIDTH);
 
@@ -106,7 +108,7 @@ void Shell::AddLine(const Line* pLine)
 
     m_aLines.PushBack(pLine);
  
-    // On décale toutes les lignes
+    // On dÃ©cale toutes les lignes
     if (m_aLines.Size() > m_iMaxLinesDisplayed - 1)
     {
         m_iLinesStart++;
@@ -278,7 +280,7 @@ void Shell::DrawLine(Line* pLine)
 				m_aBlinkingElements.PushBack(elem);
 			}
 
-			AssertMsg(m_iCurrentPosX >= m_iMaxCharDisplayed, "Texte dépassant la largeur !");
+			AssertMsg(m_iCurrentPosX >= m_iMaxCharDisplayed, "Texte dÃ©passant la largeur !");
 		}
 	}
 
@@ -298,8 +300,8 @@ void Shell::RefreshLines()
 	{
 		aLines = m_aHookedLines;
 
-		/* On force le non-défilement quand on remplace les lignes.
-		   Le défilement est donc réinitialisé quand on remet les
+		/* On force le non-dÃ©filement quand on remplace les lignes.
+		   Le dÃ©filement est donc rÃ©initialisÃ© quand on remet les
 		   anciennes lignes.
 		*/
 		ResetScrolling();
@@ -317,12 +319,12 @@ void Shell::RefreshLines()
 
 		m_iCurrentPosY++;
 
-		AssertMsg(m_iCurrentPosY >= m_iMaxLinesDisplayed, "Texte dépassant la hauteur !");
+		AssertMsg(m_iCurrentPosY >= m_iMaxLinesDisplayed, "Texte dÃ©passant la hauteur !");
 	}
 
 	if (IsPromptVisible())
 	{
-		// On met à jour le prompt de la ligne de commande
+		// On met Ã  jour le prompt de la ligne de commande
 		DrawLine( m_pPrompt->GetLine() );
 	}
 
@@ -361,7 +363,7 @@ void Shell::SoloKeyPressed(const KeyEvent<CharType>& arg)
 		UpdatePrompt(c);
 	}	
 
-	// Touche entrée
+	// Touche entrÃ©e
     if (arg.key == GEM_KEY_RETURN)
     {
         if (!m_pPrompt->HasText())
@@ -369,7 +371,7 @@ void Shell::SoloKeyPressed(const KeyEvent<CharType>& arg)
             return;
         }
 
-		// todo : faire appel au programme correspondant à la commande
+		// todo : faire appel au programme correspondant Ã  la commande
         ResetScrolling();
 	}
 }
@@ -452,17 +454,17 @@ bool Shell::IsPromptVisible()
 	return m_bPromptVisible;
 }
 
-/* Le shell ne gère que des lignes remplacées sans défilement 
-   (c'est-à-dire sans pouvoir faire de scroll) */
+/* Le shell ne gÃ¨re que des lignes remplacÃ©es sans dÃ©filement 
+   (c'est-Ã -dire sans pouvoir faire de scroll) */
 void Shell::HookLines(const Core::Array<Line*>& aLines)
 {
 	// On calcule le nombre de lignes en trop
 	uint32 iTooManyLinesCount = (aLines.Size() - m_iMaxLinesDisplayed) - 1;
 
-	// On vérifie s'il y en a
+	// On vÃ©rifie s'il y en a
 	if (iTooManyLinesCount > 0)
 	{
-		// Si oui, on enlève les lignes les plus anciennes
+		// Si oui, on enlÃ¨ve les lignes les plus anciennes
 		for (uint32 i = 0; i < iTooManyLinesCount; i++)
 		{
 			aLines.PopFront();
@@ -504,7 +506,7 @@ void Shell::TabComplete()
 	Core::Array<StringType> cmds;
     CONSOLE_COMMANDS_MANAGER->GetCommandsNames(cmds);
      
-    // On stocke toutes les commandes qui commence par le même début que la saisie
+    // On stocke toutes les commandes qui commence par le mÃªme dÃ©but que la saisie
     // et ceci lorsque la liste est vide
     if (sCurrentCommandLine.Length() > 0 && m_tabHistory.Empty())
     {
@@ -532,7 +534,7 @@ void Shell::TabComplete()
         }
     }
  
-    // On échange les commandes de manière circulaire dans la liste
+    // On Ã©change les commandes de maniÃ¨re circulaire dans la liste
     if (!m_tabHistory.Empty())
     {
         StringType command = m_tabHistory.Front();
@@ -629,7 +631,7 @@ m_pShellOwner(pShellOwner)
 {
 	AssertNullPointer(m_pShell);
 
-    // Ajoute le type de message (par ex [Game]) au début de la ligne
+    // Ajoute le type de message (par ex [Game]) au dÃ©but de la ligne
     AddTextElementSolo(StringType::ToWString(m_pShellOwner->GetMessageType(m_type)), m_pShellOwner->GetMessageColour(m_type), false);
 }
  
@@ -643,8 +645,8 @@ uint16 Line::GetTextElementsCount()
     return m_textElements.Size();
 }
 
-/* Ajoute un élément textuel et rajoute des 
-   lignes sur le texte spécifié dépasse l'écran */
+/* Ajoute un Ã©lÃ©ment textuel et rajoute des 
+   lignes sur le texte spÃ©cifiÃ© dÃ©passe l'Ã©cran */
 void Line::AddTextElement(StringType sTextElement, Core::Colour colour, bool bBlinking)
 {
     // On segmente la ligne
@@ -670,8 +672,8 @@ void Line::AddTextElementSolo(StringType sTextElement, Core::Colour colour, bool
     m_textElements.PushBack(pTextElement);
 }
  
-/* Analyse une ligne et la découpe en plusieurs lignes si le nombre
-   de caractères de la ligne passé dépasse un certain seuil */
+/* Analyse une ligne et la dÃ©coupe en plusieurs lignes si le nombre
+   de caractÃ¨res de la ligne passÃ© dÃ©passe un certain seuil */
 void Line::ParseLines(StringType sText, Core::Array<StringType>& moreLines)
 {
     const CharType* str = sText.Pointer();
@@ -939,7 +941,7 @@ Line* CommandLinePrompt::GetLine()
 
 	m_pLine->AddTextElementSolo( GetPromptText(), Core::Colour::White);
 
-	// On fait clignoter le caractère '$' du shell
+	// On fait clignoter le caractÃ¨re '$' du shell
 	m_pLine->AddTextElementSolo('$', Core::Colour::Orange, true);
 
 	m_pLine->AddTextElementSolo( GetCommandLineText(), Core::Colour::Yellow);

@@ -1,4 +1,4 @@
-﻿//----------------------------------------------------
+//----------------------------------------------------
 // Auteur : Clément Profit
 // Nom du fichier : Defines.h
 // Date de création : Octobre 2015
@@ -52,17 +52,17 @@
 
 /*
 
- x << SOS_PAGE_SIZE_SHIFT est équivalent à
+ x << SOS_PAGE_SIZE_SHIFT est équivalent à
  x * SOS_PAGE_SIZE
 
  --------------
 
- x >> SOS_PAGE_SIZE_SHIFT est équivalent à
+ x >> SOS_PAGE_SIZE_SHIFT est équivalent à
  x / SOS_PAGE_SIZE (arrondi entier inférieur)
 
  --------------
 
- x & SOS_PAGE_SIZE_MASK est équivalent à
+ x & SOS_PAGE_SIZE_MASK est équivalent à
  x modulo SOS_PAGE_SIZE
 
 */

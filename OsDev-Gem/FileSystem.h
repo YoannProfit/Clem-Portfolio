@@ -1,8 +1,8 @@
 //----------------------------------------------------
-// Auteur : Clément Profit
+// Auteur : ClÃ©ment Profit
 // Nom du fichier : FileSystem.h
-// Date de création : Octobre 2015
-// Description : Une classe qui gère et organise
+// Date de crÃ©ation : Octobre 2015
+// Description : Une classe qui gÃ¨re et organise
 // les fichiers entre eux
 //----------------------------------------------------
 

@@ -1,9 +1,9 @@
 //----------------------------------------------------
-// Auteur : Clément Profit
+// Auteur : ClÃ©ment Profit
 // Nom du fichier : IDE.h
-// Date de création : Octobre 2015
-// Description : Cette classe représente un système
-// de gestion d'accès disque dur PATA
+// Date de crÃ©ation : Octobre 2015
+// Description : Cette classe reprÃ©sente un systÃ¨me
+// de gestion d'accÃ¨s disque dur PATA
 //----------------------------------------------------
 
 #ifndef IDE_H

@@ -33,7 +33,7 @@ void InterruptBuilder::SetType(uint16 iType)
 
 SegmentDescriptor* InterruptBuilder::GetDescriptor()
 {
-	AssertMsg(m_bBuilt, "Le descripteur doit être configuré avant d'y accéder !");
+	AssertMsg(m_bBuilt, "Le descripteur doit Ãªtre configurÃ© avant d'y accÃ©der !");
 	
 	return m_pDescriptor;
 }
