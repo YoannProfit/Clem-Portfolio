@@ -7,6 +7,5 @@
 So, here the things : 
 
 - PHP Dev-Blog
-- PHP Modules
 - Some General C++ Code Snippets
 - Gem OS
