@@ -6,6 +6,5 @@
 
 So, here the things : 
 
-- PHP Dev-Blog
 - Some General C++ Code Snippets
 - Gem OS
